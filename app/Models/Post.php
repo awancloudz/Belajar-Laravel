@@ -16,7 +16,7 @@ class Post extends Model
     // ];
 
     protected $guarded = ['id'];
-
+    protected $with = ['user','category'];
     public function category(){
         return $this->belongsTo(Category::class);
     }
