@@ -51,4 +51,9 @@ class Post extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    //Mengubah route binding selain ID
+    public function getRouteKeyName(){
+        return 'slug';
+    }
 }
