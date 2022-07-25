@@ -2,7 +2,7 @@
 
 @section('container')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row">
         <div class="col-lg-8">
             <h1 class="mb-3">{{ $post->title }}</h1>
             <a href="/dashboard/posts" class="btn btn-success"><span data-feather="arrow-left"></span> Back to my posts</a>

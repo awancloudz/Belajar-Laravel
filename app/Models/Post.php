@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Post extends Model
 {
-    use HasFactory;
-
+    use HasFactory, Sluggable;
+    
     // protected $fillable = [
     //     'title',
     //     'excerpt',
@@ -55,5 +56,15 @@ class Post extends Model
     //Mengubah route binding selain ID
     public function getRouteKeyName(){
         return 'slug';
+    }
+
+    //Otomatis membuat slug dari title
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
     }
 }
