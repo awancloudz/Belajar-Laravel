@@ -13,7 +13,14 @@
                 <button class="btn btn-danger border-0" onclick="return confirm('Yakin menghapus data?')"><span data-feather="x-circle"></span> Delete</button>
             </form>
             <p>By: <a href="/posts?author={{ $post->user->username }}" class="text-decoration-none">{{ $post->user->name }}</a> in <a href="/posts?category={{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a></p>
-            <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="img-fluid" alt="{{ $post->category->name }}">
+            @if ($post->image)
+                <div style="max-height: 350px; overflow:hidden;">
+                    <img src="{{ asset('storage/' . $post->image ) }}" class="img-fluid" alt="{{ $post->category->name }}">
+                </div>
+            @else
+                <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="img-fluid" alt="{{ $post->category->name }}">
+            @endif
+            
             <article class="my-3 fs-5">
                 <p>{!! $post->body !!}</p>
             </article>
