@@ -54,7 +54,7 @@ Route::get('/dashboard', function(){
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug']);
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
-//Jika  Pakai Middleware IsAdmin & Kernel
+//Jika  Pakai Middleware (App\Http\Middleware\IsAdmin) & App\Http\Kernel.php
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
 
 

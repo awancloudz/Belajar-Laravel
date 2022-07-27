@@ -15,7 +15,7 @@
         </li>
       </ul>
 
-      {{-- Pemakaian Gate (authorization)--}}
+      {{-- Pemakaian Gate (authorization) setting di App\AppServiceProvider --}}
       @can('admin')
       <h6 class="sidebar-headeing d-flex justify-content-beetwen align-item-center px-3 mt-4 mb-1 text-muted">
         <span>Administrator</span>
